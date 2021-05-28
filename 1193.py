@@ -2,17 +2,41 @@
 #분수찾기
 
 X = int(input())
-bun_max = 1
-stack_num = 2
-num = 1
 
-if X == 1:
-    print('1/1')
+line = 0
+total_cnt = 0
+ja = 1
+mo = 1
+
+while total_cnt < X:
+    line += 1
+    total_cnt += line
+
+real = X - (total_cnt - line)
+
+if line % 2 ==0:
+    ja = real
+    mo = line - real + 1
 else:
-    while True:
-        num += stack_num
-        stack_num += 1
-        bun_max += 1
-        if X <= num:
+    ja = line - real + 1
+    mo = real
+print(ja, '/', mo, sep='')
 
-            print('{}/{}'.format(bun_max-1, bun_max))
+
+'''
+#답지
+X = int(input())
+line = 1
+ja = 1
+mo = 1
+while X > line:
+    X -=  line
+    line += 1
+    if line % 2 == 0:
+        ja = X
+        mo = line - X + 1
+    else :
+        ja = line - X + 1
+        mo = X
+print(ja, '/', mo, sep='')
+'''
