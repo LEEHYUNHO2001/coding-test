@@ -1,5 +1,6 @@
 #https://www.acmicpc.net/problem/1018
 #체스판 다시 칠하기
+#4중 for문, 체스판 row col 규칙
 
 import sys
 
