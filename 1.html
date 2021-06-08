@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Layout</title>
+<style type="text/css">
+body {
+	color: #FFF;
+}
+
+#wrap {
+	width: 971px;
+	margin: 0 auto;
+}
+header, nav, section, aside, footer{
+	margin: 5px;
+	padding: 10px;
+}
+header {
+	border: 1px solid navy;
+	background-color: navy;
+	height: 50px;
+}
+div{ width: 100%;}
+nav {
+	border: 1px solid skyblue;
+	background-color: skyblue;
+	width:100px; height:500px;
+	float: left;
+}
+section {
+	border: 1px solid skyblue;
+	background-color: skyblue;
+	width:675px; height:500px;
+	float: left;
+}
+aside {
+	border: 1px solid skyblue;
+	background-color: skyblue;
+	width:100px; height:500px;
+	float: left;
+}
+footer {
+	
+	border: 1px solid cyan;
+	background-color: cyan;
+	height: 50px;
+}
+.clear {clear:left;}
+</style>
+</head>
+
+<body>
+	<div id="wrap">
+		<header>header</header>
+		<div>
+			<nav>navigation</nav>		
+			<section>section</section>		
+			<aside>aside</aside>
+		</div>
+		
+		<div class="clear"></div>	
+	    <footer>footer</footer>
+	</div>
+	
+</body>
+</html>

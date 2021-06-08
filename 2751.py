@@ -1,9 +1,6 @@
 #https://www.acmicpc.net/problem/2751
 #수 정렬하기 2
 
-
-
-
 #합병정렬 - 재귀 이용
 import sys
 
