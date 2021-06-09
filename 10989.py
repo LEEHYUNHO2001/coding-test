@@ -8,9 +8,7 @@ range_lst = [0]*10001
 
 for i in range(N):
     num = int(sys.stdin.readline().strip())
-    print(range_lst[num])
     range_lst[num] = range_lst[num] + 1
-    print(range_lst[num])
 
 for i in range(10001):
     if range_lst[i] != 0:
