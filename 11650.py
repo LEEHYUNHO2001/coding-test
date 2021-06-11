@@ -8,7 +8,6 @@ for i in range(N):
     nums.append([a, b])
 
 nums = sorted(nums)
-print(nums)
 
 for i in range(N):
     print(nums[i][0], nums[i][1])
