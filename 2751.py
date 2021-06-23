@@ -88,3 +88,35 @@ for i in merge_array:
     print(i)
 
 '''
+
+'''
+#힙 정렬
+
+#데이터 삽입 삭제가 되면 힙의 성질을 만족하는지 확인 및 변환
+#(힙 성질 - 최소힙 : 부모는 자식보다 작거나 같다)
+def heapify(li, idx, n):
+    l = idx*2
+    r = idx*2 + 1
+    s_idx = idx
+    if (l <= n and li[s_idx] > li[l]):
+        s_idx = l
+    if (r <= n and li[s_idx] > li[r]):
+        s_idx = r
+    if s_idx != idx:
+        li[idx], li[s_idx] = li[s_idx], li[idx]
+        return heapify(li, s_idx, n)
+
+#최소 힙 뽑고 정렬
+def heap_sort(arr):
+    n = len(arr)
+    arr = [0] + arr
+
+    #최소 힙 생성
+    for i in range(n, 0, -1):
+        heapify(arr, i, n)
+    
+    #min element extract & heap
+    for i in range(n, 0, -1):
+        arr[i], arr[1] = arr[1], arr[i]
+        heapify(arr, 1, i-1)
+'''
