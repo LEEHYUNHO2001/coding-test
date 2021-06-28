@@ -16,5 +16,6 @@ def solution(board, moves):
             del lst[i], lst[i]
             i = 0
             answer += 2
-        i += 1
+        else:
+            i += 1
     return answer
