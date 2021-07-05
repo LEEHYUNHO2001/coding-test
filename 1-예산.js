@@ -1,5 +1,6 @@
 function solution(d, budget) {
     var cnt = 0
+    
     d.sort((a, b) => {
         if(a >= b){
             return 1
