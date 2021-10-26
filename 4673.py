@@ -10,5 +10,6 @@ for i in range(1, 10000):
     dn.add(i)
 self_num = all - dn
 
+
 for i in sorted(self_num):
     print(i)
