@@ -1,24 +1,14 @@
 function solution(d, budget) {
-    var cnt = 0
-    
-    d.sort((a, b) => {
-        if(a >= b){
-            return 1
-        } else{
-            return -1
-        }
-    })
-    
-    while (budget > 0){
-        if(budget < d[cnt]){
-            break
-        }
-        budget -= d[cnt]
-        if(cnt === d.length){
-            break
-        }
-        cnt += 1
-        
+  let answer = 0;
+  let currentBudget = budget;
+  const sortedD = d.sort((a, b) => a - b);
+  for (let i = 0; i < sortedD.length; i++) {
+    if (sortedD[i] <= currentBudget) {
+      answer += 1;
+      currentBudget -= sortedD[i];
+    } else {
+      break;
     }
-    return cnt;
+  }
+  return answer;
 }
