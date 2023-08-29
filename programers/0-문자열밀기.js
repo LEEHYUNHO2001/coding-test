@@ -1,11 +1,20 @@
 function solution(A, B) {
-  if (A.length !== B.length) return -1; // A와 B의 길이가 다르면 불가능한 경우
+  let answer = 0;
+  let currentStr = A;
+  if (A.length !== B.length) return -1;
+  if (A === B) return 0;
 
-  for (let i = 0; i < A.length; i++) {
-    if (A === B) return i; // A와 B가 동일하면 밀어야 하는 횟수 반환
-    const lastChar = A[A.length - 1]; // A의 마지막 문자
-    A = [lastChar, ...A.slice(0, A.length - 1)].join(""); // A를 오른쪽으로 한 칸 밀기
-  }
-
-  return -1; // A를 밀어도 B와 같아지지 않으면 불가능한 경우
+  const able = [...A].some((_, index) => {
+    const currentArr = [...currentStr];
+    const last = currentArr[currentArr.length - 1];
+    currentStr = [last, ...currentArr.slice(0, currentArr.length - 1)].join("");
+    if (currentStr === B) {
+      answer = index + 1;
+      return true;
+    }
+  });
+  if (!able) return -1;
+  return answer;
+  // 오른쪽으로 밀어도 되고, 왼쪽으로 밀어도 되는데 거기서 최소 -> 문제에서 원하는게 아님
+  // return answer > A.length - answer ? A.length - answer : answer
 }
