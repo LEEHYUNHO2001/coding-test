@@ -1,3 +1,5 @@
+// "Dynamic Programming"의 한 형태로, 이전 계산 결과를 활용하여
+// 큰 문제를 작은 부분 문제로 나누어 해결하는 방법
 // [3, 6, 7, 1]
 // [7, 6, 4, 4]
 // [8, 4, 4, 4]
@@ -24,4 +26,14 @@ function solution(land) {
       [0, 0, 0, 0]
     )
   );
+}
+
+function solution(land) {
+  for (let row = 1; row < land.length; row++) {
+    for (let col = 0; col < 4; col++) {
+      land[row][col] += Math.max(...land[row - 1].filter((_, i) => col !== i));
+    }
+  }
+  const lastRow = land.pop();
+  return Math.max(...lastRow);
 }
